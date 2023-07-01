@@ -12,7 +12,7 @@ const initialStorySummary: StorySummary ={
     synopsis:"As Batman's Batmobile screeched to a halt at the riot's epicenter, chaos engulfed the streets of Gotham City.  The Joker, his face concealed behind an eerie mask of white makeup and a twisted grin, reveled in the bedlam he has unleashed.  With a maniacal laugh that piereced through the pandemonium, he taunted Batman.The fate of Gotham City teetered on a knife's edge, the struggle between the Dark Knight and the Clown Prince of Crime reaching its climax.  Would the city be reduced to ashes, or would the enduring spirit of justice prevail? The answer awaits....."
 };
 
-const OffcanvasSummary: React.FC =()=>{
+const OffCanvasSummary: React.FC =()=>{
     const [show, setShow]=useState(false)
     const [summary, setSummary]=useState(initialStorySummary);
     const handleClose =()=> setShow(false);
@@ -36,4 +36,6 @@ const OffcanvasSummary: React.FC =()=>{
         </>
     );
 }
+
+export default OffCanvasSummary;
 

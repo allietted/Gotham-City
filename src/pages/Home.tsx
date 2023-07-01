@@ -25,6 +25,59 @@ const ImageWithModal:React.FC<ImageWithModalProps> = ({src}) => {
 
 const Home: React.FC =() => {
     const[images, setImages] =useState<string[]>([]);
+
+
+    useEffect(()=> {
+        fetch()
+        .then((response) => response.json())
+        .then((data) => setImages(data.map((item:any)=>item.image)));
+
+    },[]);
+
+    return(
+        <AppLayout>
+            <div style= {{marginBottom:"20px"}}>
+                <OffCanvasQuiz/>
+            </div>
+             <section>
+                <Container fluid className='joker-cover'>
+                    <Row className='g-0'>
+                      {images.map((src,index)=>(
+                        <Col key={index} lg={4} className='less-padding'>
+                            <ImageWithModal src='{src}'/>
+                        </Col>
+                      ))}
+                    </Row>
+
+                    <Row>
+                        <a href='https://www.youtube.com/watch?v=wcinzmfZeCc' target='_blank' rel='noopener noreferrer' className='no-underline'>
+                            <p className='text-center' style={{
+                                color:'red', 
+                                fontSize:'40px',
+                                fontWeight:'bold',
+                                fontFamily:'"Comic Sans MS", cursive, sans-serif',
+                                textShadow:'2px 2px 4px #000000',
+                                textAlign: 'center'
+                                
+                            }}>
+                                TO BE CONTINUED .....
+                            </p>
+                        </a>
+                    </Row>
+                </Container>
+             </section>
+        </AppLayout>
+    );
+
+
 }
+
+export default Home;
+
+
+
+
+
+
 
 
